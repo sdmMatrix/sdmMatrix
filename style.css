@@ -1,0 +1,135 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.topbar {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.topbar h1 { margin: 0; }
+.topbar p { margin: 0.4rem 0 0; opacity: 0.9; }
+
+.layout {
+  width: min(1100px, 95%);
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(31, 41, 55, 0.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.grid article {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.grid h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.grid p {
+  margin: 0.45rem 0 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form-inline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+input, button {
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(0.95); }
+
+button.danger {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.55rem 0;
+}
+
+.mini-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.2rem 0.5rem;
+}
+
+footer {
+  width: min(1100px, 95%);
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 0.8rem;
+}
