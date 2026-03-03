@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Lite by SDM Matrix</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>ERP Lite</h1>
+    <p>My own lightweight ERP version (Inventory, Sales, Employees)</p>
+  </header>
+
+  <main class="layout">
+    <section class="card stats">
+      <h2>Dashboard</h2>
+      <div class="grid">
+        <article>
+          <h3>Total Products</h3>
+          <p id="totalProducts">0</p>
+        </article>
+        <article>
+          <h3>Total Stock Value</h3>
+          <p id="stockValue">$0.00</p>
+        </article>
+        <article>
+          <h3>Total Sales</h3>
+          <p id="totalSales">$0.00</p>
+        </article>
+        <article>
+          <h3>Total Employees</h3>
+          <p id="totalEmployees">0</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Inventory</h2>
+      <form id="inventoryForm" class="form-inline">
+        <input type="text" id="productName" placeholder="Product name" required />
+        <input type="number" id="productQty" placeholder="Qty" min="0" required />
+        <input type="number" id="productPrice" placeholder="Unit price" min="0" step="0.01" required />
+        <button type="submit">Add Product</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Value</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Sales</h2>
+      <form id="salesForm" class="form-inline">
+        <input type="text" id="saleRef" placeholder="Invoice ref" required />
+        <input type="number" id="saleAmount" placeholder="Amount" min="0" step="0.01" required />
+        <button type="submit">Record Sale</button>
+      </form>
+      <ul id="salesList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Employees</h2>
+      <form id="employeeForm" class="form-inline">
+        <input type="text" id="employeeName" placeholder="Employee name" required />
+        <input type="text" id="employeeRole" placeholder="Role" required />
+        <button type="submit">Add Employee</button>
+      </form>
+      <ul id="employeeList" class="list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <button id="seedBtn">Load demo data</button>
+    <button id="clearBtn" class="danger">Clear all data</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
